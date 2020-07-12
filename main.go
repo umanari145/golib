@@ -6,7 +6,7 @@ import (
 	"github.com/aws/aws-lambda-go/lambda"
 )
 
-func hello() (string, error) {
+func hello() {
 	fmt.Println("hello world")
 }
 
