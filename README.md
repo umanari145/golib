@@ -22,7 +22,7 @@ go mod init プロジェクト名(golib)
 #ルートディレクトリでコマンドを打っても再帰的に全てインストールされない
 go build
 
-#不要ライブラリの削除
+#go.sumの内容からgo.modを作る
 go mod tidy
 ```
 
