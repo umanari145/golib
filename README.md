@@ -33,6 +33,31 @@ go mod tidy
 ライブラリの状態管理
 composer.lockのようなもの
 
+## migration tool
+
+https://bitbucket.org/liamstask/goose/src/master/
+
+<br>
+create文
+```
+docker exec golib_app_1 goose -path=. create start sql
+```
+
+現状
+```
+ docker exec golib_app_1 goose -path=. status
+```
+
+migration実行
+```
+ docker exec golib_app_1 goose -path=. up
+```
+
+rollback
+```
+ docker exec golib_app_1 goose -path=. down
+```
+
 ## gorm
 goのORマッパー<br>
 http://gorm.io/ja_JP/
