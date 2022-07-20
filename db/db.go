@@ -2,7 +2,6 @@ package db
 
 import (
 	"os"
-
 	"github.com/go-easylog/el"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
@@ -12,7 +11,7 @@ import (
 //Connect DBへの接続
 func Connect() (*gorm.DB, error) {
 	DBMS := os.Getenv("DB_TYPE")
-	USER := os.Getenv("POSTGRES_DBNAME")
+	USER := os.Getenv("POSTGRES_USER")
 	PASS := os.Getenv("POSTGRES_PASSWORD")
 	DBNAME := os.Getenv("POSTGRES_DBNAME")
 
@@ -22,7 +21,7 @@ func Connect() (*gorm.DB, error) {
 		" dbname=" + DBNAME +
 		" password=" + PASS +
 		" sslmode=disable"
-
+	
 	db, err := gorm.Open(DBMS, CONNECT)
 	if err != nil {
 		el.Error("DB cannnot connect")
